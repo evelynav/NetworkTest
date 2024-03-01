@@ -1,6 +1,9 @@
 package com.example.networktest;
 
 import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +12,10 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    EditText matrikelNr;
+    Button btnSend;
+    TextView responseText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
