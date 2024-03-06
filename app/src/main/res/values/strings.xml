@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NetworkTest</string>
+    <string name="Abschicken">Button</string>
 </resources>
