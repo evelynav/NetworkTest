@@ -14,6 +14,13 @@ public class NetworkServerTCP extends AsyncTask<String, Void, String> {
         try{
             //Connect to the server
             Socket socket = new Socket("se2-submission.at", 20080);
+
+            //TODO Send data to server
+
+            //TODO Read response from server
+
+            //Close connection
+            socket.close();
         } catch (UnknownHostException err){
             return "Unknown Host: " + err.getMessage();
         } catch (IOException err) {
