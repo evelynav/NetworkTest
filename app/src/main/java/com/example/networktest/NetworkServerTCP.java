@@ -1,6 +1,9 @@
 package com.example.networktest;
 
 import android.os.AsyncTask;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.net.Socket;
 import java.io.IOException;
 import java.net.UnknownHostException;
@@ -17,7 +20,9 @@ public class NetworkServerTCP extends AsyncTask<String, Void, String> {
 
             //TODO Send data to server
 
-            //TODO Read response from server
+            //Read response from server
+            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            String receivedMessage = in.readLine();
 
             //Close connection
             socket.close();
