@@ -1,6 +1,9 @@
 package com.example.networktest;
 
 import android.os.AsyncTask;
+import java.net.Socket;
+import java.io.IOException;
+import java.net.UnknownHostException;
 
 public class NetworkServerTCP extends AsyncTask<String, Void, String> {
 
@@ -8,6 +11,14 @@ public class NetworkServerTCP extends AsyncTask<String, Void, String> {
 
     @Override
     protected String doInBackground(String... strings) {
+        try{
+            //Connect to the server
+            Socket socket = new Socket("se2-submission.at", 20080);
+        } catch (UnknownHostException err){
+            return "Unknown Host: " + err.getMessage();
+        } catch (IOException err) {
+            return "IO Exception: " + err.getMessage();
+        }
         return null;
     }
 
