@@ -21,9 +21,9 @@ import java.net.UnknownHostException;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText txtMatrikelNr;
+    EditText txtMatNrInput;
     Button btnSend;
-    TextView lblResponseServer;
+    TextView lblServerOutput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,13 +36,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        txtMatrikelNr = findViewById(R.id.txtMatrikelNr);
+        txtMatNrInput = findViewById(R.id.txtMatNrInput);
         btnSend = findViewById(R.id.btnSend);
-        lblResponseServer = findViewById(R.id.lblResponseServer);
-
+        lblServerOutput = findViewById(R.id.lblServerOutput);
     }
 
-    protected String doInBackground(String... strings) {
+    protected String networkServer() {
         try{
             //Connect to the server
             Socket socket = new Socket("se2-submission.at", 20080);

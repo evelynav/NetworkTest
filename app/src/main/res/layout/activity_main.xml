@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Gib deine Matrikelnummer ein:"
-        app:layout_constraintBottom_toTopOf="@+id/txtMatrikelNr"
+        app:layout_constraintBottom_toTopOf="@+id/txtMatNrInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,12 +20,12 @@
         app:layout_constraintVertical_bias="0.5" />
 
     <EditText
-        android:id="@+id/txtMatrikelNr"
+        android:id="@+id/txtMatNrInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/lblResponseServer"
+        app:layout_constraintBottom_toTopOf="@+id/lblServerOutput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         app:layout_constraintVertical_bias="0.707" />
 
     <TextView
-        android:id="@+id/lblResponseServer"
+        android:id="@+id/lblServerOutput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Antwort vom Server:"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lblResponseServer"
+        app:layout_constraintTop_toBottomOf="@+id/lblServerOutput"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
