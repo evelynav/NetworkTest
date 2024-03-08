@@ -13,9 +13,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText txtMatrikelNr;
+    EditText txtMatNrInput;
     Button btnSend;
-    TextView lblResponseServer;
+    TextView lblServerOutput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,9 +28,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
-        txtMatrikelNr = findViewById(R.id.txtMatrikelNr);
+        txtMatNrInput = findViewById(R.id.txtMatNrInput);
         btnSend = findViewById(R.id.btnSend);
-        lblResponseServer = findViewById(R.id.lblResponseServer);
-
+        lblServerOutput = findViewById(R.id.lblServerOutput);
     }
 }
