@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     public void findCommonDivisors(View view) {
         txtMatNrInput = findViewById(R.id.txtMatNrInput);
         String matrikelNr = txtMatNrInput.getText().toString();
+        boolean foundCD = false;
 
         for (int i = 0; i < matrikelNr.length(); i++) {
             for (int j = i + 1; j < matrikelNr.length(); j++) {
@@ -49,8 +50,12 @@ public class MainActivity extends AppCompatActivity {
                     message = "Gemeinsame Teiler gefunden:\n" +
                             "Ziffer: " + num1 + ", Index: "+ i +
                             "\nZiffer: " + num2 + ", Index: "+ j;
+                    foundCD = true;
                 }
             }
+        }
+        if(!foundCD){
+            message = "Keine gemeinsamen Teiler gefunden.";
         }
         lblServerOutput.setText(message);
     }
