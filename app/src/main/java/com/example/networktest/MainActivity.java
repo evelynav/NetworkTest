@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 int num2 = Character.getNumericValue(matrikelNr.charAt(j));
 
                 if(calcCommonDivisor(num1, num2)){
-                    message = "Index " + i + ": " + num1 + ", Index " + j + ": " + num2;
+                    message = "Index " + i + ": " + num1 + "\nIndex " + j + ": " + num2;
                 }
             }
         }
