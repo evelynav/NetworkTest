@@ -23,8 +23,8 @@ import java.net.UnknownHostException;
 public class MainActivity extends AppCompatActivity {
 
     EditText txtMatNrInput;
-    Button btnSend;
     TextView lblServerOutput;
+    Button btnSend;
     String message;
 
     @Override
@@ -43,27 +43,38 @@ public class MainActivity extends AppCompatActivity {
         lblServerOutput = findViewById(R.id.lblServerOutput);
     }
 
-    protected String networkServer() {
-        try{
-            //Connect to the server
-            Socket socket = new Socket("se2-submission.at", 20080);
+    protected void networkServer() {
 
-            //Send data to server
-            BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-            out.write("Hello Server");
+        txtMatNrInput = findViewById(R.id.txtMatNrInput);
+        lblServerOutput = findViewById(R.id.lblServerOutput);
 
-            //Read response from server
-            BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            String receivedMessage = in.readLine();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    //Connect to the server
+                    Socket socket = new Socket("se2-submission.at", 20080);
 
-            //Close connection
-            socket.close();
-        } catch (UnknownHostException err){
-            return "Unknown Host: " + err.getMessage();
-        } catch (IOException err) {
-            return "IO Exception: " + err.getMessage();
-        }
-        return null;
+                    //Send data to server
+                    BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+                    out.write(txtMatNrInput.getText().toString());
+
+                    //Read response from server
+                    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                    message = in.readLine();
+
+                    //Close connection
+                    socket.close();
+                } catch (UnknownHostException err){
+                    message = "Unknown Host:\n" + err.getMessage();
+                } catch (IOException err) {
+                    message = "IO Exception:\n" + err.getMessage();
+                }
+            }
+        });
+        thread.start();
+
+        lblServerOutput.setText(message);
     }
 
     //MatrikelNr 11834666 mod 7 = 4 -> Gemeinsamer Teiler mit Indizes
