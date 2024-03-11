@@ -48,28 +48,25 @@ public class MainActivity extends AppCompatActivity {
         txtMatNrInput = findViewById(R.id.txtMatNrInput);
         lblServerOutput = findViewById(R.id.lblServerOutput);
 
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    //Connect to the server
-                    Socket socket = new Socket("se2-submission.aau.at", 20080);
+        Thread thread = new Thread(() -> {
+            try {
+                //Connect to the server
+                Socket socket = new Socket("se2-submission.aau.at", 20080);
 
                     //Send data to server
                     BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
                     out.write(txtMatNrInput.getText().toString());
 
-                    //Read response from server
-                    BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                    message = in.readLine();
+                //Read response from server
+                BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                message = in.readLine();
 
-                    //Close connection
-                    socket.close();
-                } catch (UnknownHostException err){
-                    message = "Unknown Host:\n" + err.getMessage();
-                } catch (IOException err) {
-                    message = "IO Exception:\n" + err.getMessage();
-                }
+                //Close connection
+                socket.close();
+            } catch (UnknownHostException err){
+                message = "Unknown Host:\n" + err.getMessage();
+            } catch (IOException err) {
+                message = "IO Exception:\n" + err.getMessage();
             }
         });
         thread.start();
