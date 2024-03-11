@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         lblServerOutput = findViewById(R.id.lblServerOutput);
     }
 
-    protected void networkServer() {
+    public void networkServer(View view) {
 
         txtMatNrInput = findViewById(R.id.txtMatNrInput);
         lblServerOutput = findViewById(R.id.lblServerOutput);
