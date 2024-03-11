@@ -77,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
         lblServerOutput.setText(message);
     }
 
+    public void sendDataToServer(View view){
+        networkServer();
+    }
+
+
     //MatrikelNr 11834666 mod 7 = 4 -> Gemeinsamer Teiler mit Indizes
     public void findCommonDivisors(View view) {
         txtMatNrInput = findViewById(R.id.txtMatNrInput);
@@ -100,7 +105,6 @@ public class MainActivity extends AppCompatActivity {
             message = "Keine gemeinsamen Teiler gefunden.";
         }
         lblServerOutput.setText(message);
-        networkServer();
     }
 
 
