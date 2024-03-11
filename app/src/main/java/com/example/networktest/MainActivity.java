@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
             message = "Keine gemeinsamen Teiler gefunden.";
         }
         lblServerOutput.setText(message);
+        networkServer();
     }
 
 
