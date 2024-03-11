@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
     EditText txtMatNrInput;
     TextView lblServerOutput;
-    Button btnSend;
     String message;
 
     @Override
@@ -36,10 +35,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
-        txtMatNrInput = findViewById(R.id.txtMatNrInput);
-        btnSend = findViewById(R.id.btnSend);
-        lblServerOutput = findViewById(R.id.lblServerOutput);
     }
 
     public void networkServer(View view) {
