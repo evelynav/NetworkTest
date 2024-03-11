@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     //Connect to the server
-                    Socket socket = new Socket("se2-submission.at", 20080);
+                    Socket socket = new Socket("se2-submission.aau.at", 20080);
 
                     //Send data to server
                     BufferedWriter out = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
