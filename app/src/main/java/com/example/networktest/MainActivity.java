@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                 message = in.readLine();
 
                 socket.close();
+                printWriter.close();
             } catch (UnknownHostException err){
                 message = "Unknown Host:\n" + err.getMessage();
             } catch (IOException err) {
