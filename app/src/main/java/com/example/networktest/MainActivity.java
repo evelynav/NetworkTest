@@ -74,6 +74,12 @@ public class MainActivity extends AppCompatActivity {
         });
         thread.start();
 
+        try {
+            thread.join();
+        }catch (InterruptedException err){
+            err.printStackTrace();
+        }
+
         lblServerOutput.setText(message);
     }
 
