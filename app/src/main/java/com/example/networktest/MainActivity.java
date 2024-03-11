@@ -49,19 +49,15 @@ public class MainActivity extends AppCompatActivity {
 
         Thread thread = new Thread(() -> {
             try {
-                //Connect to the server
                 Socket socket = new Socket("se2-submission.aau.at", 20080);
 
-                //Send data to server
                 PrintWriter printWriter = new PrintWriter(socket.getOutputStream());
                 printWriter.println(txtMatNrInput.getText().toString());
                 printWriter.flush();
 
-                //Read response from server
                 BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 message = in.readLine();
 
-                //Close connection
                 socket.close();
             } catch (UnknownHostException err){
                 message = "Unknown Host:\n" + err.getMessage();
