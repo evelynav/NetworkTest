@@ -65,7 +65,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="196dp"
         android:background="#223E55"
-        android:onClick="sendDataToServer"
+        android:onClick="networkServer"
         android:text="Abschicken"
         android:textAllCaps="true"
         android:textColor="#FFFFFF"
